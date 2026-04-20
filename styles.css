@@ -1,0 +1,164 @@
+@font-face {
+    font-family: 'Geomanist';
+    src: url('assets/fonts/Geomanist-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Geomanist';
+    src: url('assets/fonts/Geomanist-Bold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Geomanist';
+    src: url('assets/fonts/Geomanist-Black.otf') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Geomanist';
+    src: url('assets/fonts/Geomanist-Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+:root {
+    --primary-color: #00b7af;
+    --dark-color: #10181f;
+    --light-color: #ffffff;
+    --text-color: #10181f;
+    --border-color: #e0e0e0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Geomanist', sans-serif;
+    overflow: hidden;
+    background-color: #000;
+    color: var(--text-color);
+}
+
+.canvas {
+    width: 1920px;
+    height: 1080px;
+    position: relative;
+    overflow: hidden;
+    /* Optional: helps with scaling to view in smaller windows during dev */
+    transform-origin: top left;
+}
+
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1920px;
+    height: 1080px;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1920px;
+    height: 1080px;
+    z-index: 10;
+}
+
+.header {
+    position: absolute;
+    top: 60px;
+    left: 80px;
+}
+
+.logo {
+    height: 80px;
+    width: auto;
+}
+
+.tiers-container {
+    position: absolute;
+    top: 280px;
+    left: 0;
+    width: 1920px;
+    height: 656px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tier {
+    position: absolute;
+    background: transparent;
+    border-radius: 20px;
+    padding: 60px;
+    width: 550px;
+    height: 656px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: none;
+}
+
+.tier:nth-child(1) {
+    left: 90px;
+}
+
+.tier:nth-child(2) {
+    left: 685px;
+}
+
+.tier:nth-child(3) {
+    left: 1280px;
+}
+
+.tier-name {
+    font-size: 48px;
+    font-weight: 900;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.tier-price {
+    font-size: 96px;
+    font-weight: bold;
+    color: var(--dark-color);
+    margin-bottom: 40px;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 40px;
+}
+
+.frequency {
+    font-size: 36px;
+    font-weight: normal;
+    color: #6a7071;
+}
+
+.features {
+    list-style: none;
+}
+
+.features li {
+    font-size: 32px;
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 50px;
+}
+
+.features li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
